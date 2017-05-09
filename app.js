@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 //引入routes路由文件
 const routes = require('./routes');
+//测试一下数据库是否链接成功
+const db = require('./model/db');
 const app = express();
 
 // view engine setup
@@ -21,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //使用该路由规则
 app.use('/', routes);
+
 
 
 // catch 404 and forward to error handler
